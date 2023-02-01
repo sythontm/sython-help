@@ -1,0 +1,11 @@
+telethon
+googletrans==3.1.0a0
+hijri_converter
+user_agent
+heroku3
+gitpython
+requests
+pytube
+youtube-search
+sqlalchemy
+asyncio
