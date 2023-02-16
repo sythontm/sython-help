@@ -28,6 +28,7 @@ import base64
 import datetime
 from payment import *
 from help import *
+from checktele import *
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 import requests
@@ -37,7 +38,7 @@ sython.start()
 c = requests.session()
 bot_username = '@t06bot'
 bot_usernamee = '@A_MAN9300BOT'
-bot_usernameee = '@MARKTEBOT'
+
 y = datetime.datetime.now().year
 m = datetime.datetime.now().month
 dayy = datetime.datetime.now().day
@@ -74,19 +75,18 @@ async def _(event):
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
 async def _(event):
     start = datetime.datetime.now()
-    await event.edit("**جاري الفحص...**")
+    await event.edit("جارٍ...")
     end = datetime.datetime.now()
-    ms = (end - start).microseconds / 2000
+    ms = (end - start).microseconds / 1000
     await event.edit(f'''
-⌯ 𝒔𝒐𝒖𝒓𝒄𝒆 𝒔𝒚𝒕𝒉𝒐𝒏 ⌯
-╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍
-☆ 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐬𝐲𝐭𝐡𝐨𝐧
-☆ 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 : 2.0
-☆ 𝐩𝐢𝐧𝐠 : {ms}
-☆ 𝐝𝐚𝐭𝐞 :{m9zpi}
-☆ 𝐢𝐝 :`{event.sender_id}`
-☆ 𝐬𝐨𝐮𝐫𝐜𝐞 𝐬𝐲𝐭𝐡𝐨𝐧 : @SAYTHONH
-╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍
+**☆ WELCOME TO SOURCE SYTHON
+☆ VERSION : 1.3
+☆ PING : `{ms}`
+☆ DATE : `{m9zpi}`
+☆ ID : `{event.sender_id}`
+☆ SOURCE SYTHON : @SAYTHONH**
+
+-قـم بأرسال `.الاوامر`
 ''')
 
 
@@ -107,53 +107,25 @@ async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec3)
 
-@sython.on(events.NewMessage(outgoing=True, pattern=r"s1"))
+
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.م4"))
 async def _(event):
     start = datetime.datetime.now()
-    await event.edit(s1)
-    
-@sython.on(events.NewMessage(outgoing=True, pattern=r"s2"))
-async def _(event):
-    start = datetime.datetime.now()
-    await event.edit(s2)
-    
-@sython.on(events.NewMessage(outgoing=True, pattern=r"s3"))
-async def _(event):
-    start = datetime.datetime.now()
-    await event.edit(s3)
-    
-    
+    await event.edit(sec4)
+
     
 ownerhson_id = 5159123009
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern='/scan'))
+@sython.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerhson_id :
-        order = await event.reply('**⌯ Welcome developer
-⌯ Sython Team**')
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.فحص'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == ownerhson_id :
-        order = await event.reply('**مرحبا بك ايها المطور حسام | sython**')
-
+        order = await event.reply('مرحبا ايها المطور')
 
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
 async def update(event):
-    await event.edit("جاري اعادة تشغيل سورس سايثون انتضر قليلاً...")
+    await event.edit("• جارِ اعادة تشغيل السورس ..\n• انتضر 1-2 دقيقة  .")
     await sython.disconnect()
     await sython.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
-
-@sython.on(events.NewMessage(outgoing=True, pattern=r"ايقاف"))
-async def update(event):
-    await event.edit("**جاري الايقاف انتضر قليلا...**")
-    await sython.disconnect()
-    await sython.send_message("me", "تـم ايقاف النشر التلـقائي")
-
-
 
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.تجميع المليار"))
 async def _(event):
@@ -199,6 +171,7 @@ async def _(event):
 
 ##################
 
+
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.تجميع الجوكر"))
 async def _(event):
         await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
@@ -240,60 +213,6 @@ async def _(event):
                 break
         await sython.send_message(event.chat_id, "تم الانتهاء من التجميع !")
 
-
-
-
-
-################
-
-
-@sython.on(events.NewMessage(outgoing=True, pattern=r"\.تجميع العقاب"))
-async def _(event):
-        await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
-        channel_entity = await sython.get_entity(bot_usernameee)
-        await sython.send_message('@MARKTEBOT', 'جاري التجميع بواسطة | SOMY TEAM')
-        channel_entity = await sython.get_entity(bot_usernameee)
-        await sython.send_message('@MARKTEBOT', '/start')
-        await asyncio.sleep(5)
-        msg0 = await sython.get_messages('@MARKTEBOT', limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(5)
-        msg1 = await sython.get_messages('@MARKTEBOT', limit=1)
-        await msg1[0].click(0)
-
-        chs = 1
-        for i in range(100):
-
-            await asyncio.sleep(5)
-
-            list = await sython(GetHistoryRequest(peer=channel_entity, limit=1,
-                                                   offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم يتجميع النقاط بطريقه مختلفه') != -1:
-                await sython.send_message(event.chat_id, f"لايوجد قنوات  في البوت | SY")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await sython(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await sython(ImportChatInviteRequest(bott))
-                msg2 = await sython.get_messages('@MARKTEBOT', limit=1)
-                await msg2[0].click(text='تحقق')
-                chs += 1
-                
-            except:
-                await sython.send_message(event.chat_id, f"خطأ من المحتمل تم حظر الانضمام ")
-                break
-        await sython.send_message(event.chat_id, "تم الانتهاء من التجميع !")
-
-
-
-
-
-
-################
 LOGS = logging.getLogger(__name__)
 
 logging.basicConfig(
@@ -318,6 +237,39 @@ DEVS = [
     5159123009,
 ]
 
+def calc(num1, num2, fun):
+    if fun == "+":
+        return num1 + num2
+    elif fun == "-":
+        return num1 - num2
+    elif fun == "*":
+        return num1 * num2
+    elif fun == "X":
+        return num1 * num2
+    elif fun == "x":
+        return num1 * num2
+    elif fun == "/":
+        return num1 / num2
+    elif fun == "÷":
+        return num1 / num2
+    else:
+        return "خطأ"
+
+
+@sython.on(events.NewMessage(outgoing=True, pattern=".احسب (.*)"))
+async def _(event):
+    try:
+        msg = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 2)
+        num1 = int(msg[0])
+        num2 = int(msg[2])
+        fun = str(msg[1])
+        await event.edit(f''' الناتج = `{calc(num1, num2, fun)}`''')
+    except:
+        await event.edit('''خطأ, يرجى ادخال الرقم مثل :
+7 + 7
+7 - 7
+7 x 7
+7 ÷ 7''')
 
 
 @sython.on(events.NewMessage(outgoing=True, pattern=".للكروبات(?: |$)(.*)"))
@@ -430,23 +382,20 @@ async def spammer(event):
     cat = input_str[1:]
     await event.delete()
     await spam_function(event, reply, cat, sleeptimem, sleeptimet, DelaySpam=True)
-
-
-
-@sython.on(events.NewMessage(outgoing=True, pattern="السايثون"))
-async def spammer(event):
-    reply = await event.get_reply_message()
-    input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
-    sleeptimet = sleeptimem = float(input_str[0])
-    cat = input_str[1:]
-    await event.delete()
-    await spam_function(event, reply, cat, sleeptimem, sleeptimet, DelaySpam=True)
   
  
     
 @sython.on(events.NewMessage(outgoing=True, pattern=".سورس"))
 async def _(event):
-      await event.reply("""**السـورس يعمل | 𝐒𝐘𝐓𝐇𝐎𝐍**"""
+      await event.reply("""السـورس يعمـل | 𝐒𝐘𝐓𝐇𝐎𝐍
+╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍
+
+- المطور : حسام فوزي | SOMY
+
+- سورس بسيط يحتوي على الاوامر المهمة التي تحتاجها
+
+قناة السورس : https://t.me/SAYTHONH
+╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍"""
 )
 
 @sython.on(events.NewMessage(outgoing=True, pattern=".مطور"))
@@ -454,6 +403,120 @@ async def _(event):
       await event.reply("""SY OWNER : @T_4_Z"""
 )
 
+@sython.on(events.NewMessage(outgoing=True, pattern=".حلويات"))
+async def _(event):
+    event = await event.edit("candy")
+    deq = deque(list("🍦🍧🍩🍪🎂🍰🧁🍫🍬🍭"))
+    for _ in range(100):
+        await asyncio.sleep(0.4)
+        await event.edit("".join(deq))
+        deq.rotate(1)
+
+@sython.on(events.NewMessage(outgoing=True, pattern=".قلوب"))
+async def _(event):
+    animation_interval = 0.3
+    animation_ttl = range(54)
+    event = await event.edit("🖤")
+    animation_chars = [
+        "❤️",
+        "🧡",
+        "💛",
+        "💚",
+        "💙",
+        "💜",
+        "🖤",
+        "💘",
+        "💝",
+        "❤️",
+        "🧡",
+        "💛",
+        "💚",
+        "💙",
+        "💜",
+        "🖤",
+        "💘",
+        "💝",
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 18])
+
+@sython.on(events.NewMessage(outgoing=True, pattern=".العد التنازلي"))
+async def _(event):
+    animation_interval = 0.3
+    animation_ttl = range(54)
+    event = await event.edit("🔟")
+    animation_chars = [
+        "9️⃣",
+        "8️⃣",
+        "7️⃣",
+        "6️⃣",
+        "5️⃣",
+        "4️⃣",
+        "3️⃣",
+        "2️⃣",
+        "1️⃣",
+        "0️⃣",
+        "🆘",
+
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 18])
+
+        
+@sython.on(events.NewMessage(outgoing=True, pattern=".قمر"))
+async def _(event):
+    event = await event.edit("قمر")
+    deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
+    for _ in range(48):
+        await asyncio.sleep(0.2)
+        await event.edit("".join(deq))
+        deq.rotate(1)
+        
+@sython.on(events.NewMessage(outgoing=True, pattern=".قمور"))
+async def _(event):
+    event = await event.edit("قمور")
+    animation_interval = 0.2
+    animation_ttl = range(96)
+    await event.edit("قمور..")
+    animation_chars = [
+        "🌗",
+        "🌘",
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕",
+        "🌖",
+        "🌗",
+        "🌘",
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕",
+        "🌖",
+        "🌗",
+        "🌘",
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕",
+        "🌖",
+        "🌗",
+        "🌘",
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕",
+        "🌖",
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 32])
 
 
 
